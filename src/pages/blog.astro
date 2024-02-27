@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro'
+import BlogPost from '../components/BlogPost.astro'
+
+const allPosts = await Astro.glob('../pages/posts/*.md')
+---
+
+<Layout pageTitle="我的学习博客">
+  <ul class="article">
+    <p>在这里，我将分享我的学习 Astro 的之旅。</p>
+    {
+      allPosts.map((post) => {
+        return <BlogPost url={post.url} title={post.frontmatter.title} />
+      })
+    }
+  </ul>
+</Layout>
+
+<style>
+  .article {
+    font-weight: bold;
+  }
+</style>

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const skillColor = 'green'
+---
+
+<Layout pageTitle="About to Astro.">
+  <ul class="article">
+    <li><a href="/posts/post-1/">文章 1</a></li>
+  </ul>
+</Layout>
+
+<style define:vars={{ skillColor }}>
+  .article {
+    color: var(--skillColor);
+    font-weight: bold;
+  }
+</style>
